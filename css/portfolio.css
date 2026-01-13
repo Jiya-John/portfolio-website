@@ -1,0 +1,636 @@
+
+/* Google Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Moul&family=Roboto:wght@300;400;600;700&display=swap');
+/********************************************************
+  * TABLE OF CONTENTS
+  * =================
+  * 1. GENERAL
+  * 2. HEADER
+  * 3. MENU 
+  * 4. HERO SECTION
+  * 5. CONTENT AREA
+  * -- 5A. PROJECTS
+  * -- 5B. CONTACT FORM
+  * 6. FOOTER
+  * 7. MEDIA QUERIES
+  * -- 7A. TABLET VIEW -768px
+  * -- 7B. large PHONE VIEW -650px
+  * -- 7C. large PHONE VIEW -420px
+  */
+
+/* 1. GENERAL */
+:root {
+    /* Base Colors */
+    --yellow: #FBC900;
+    --yellow-45: rgba(251, 201, 0, 0.45);
+    --yellow-30: rgba(251, 201, 0, 0.30);
+    --yellow-70: rgba(251, 201, 0, 0.70);
+    --yellow-46: rgba(251, 201, 0, 0.46);
+    --hero-bg: #171515;
+    --main-bg: #0C0B0B;
+    --white: #FFFFFF;
+    --black:#000000;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--white);
+    overflow-x: hidden; 
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+section {
+    padding: 3.75em 1.25em; 
+}
+
+/*2. HEADER */
+header {
+    background-color: var(--yellow);
+    height: 6.625em; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5em;
+    position: relative; 
+}
+
+/* LOGO SECTION */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.9375em; /* 15px */
+    white-space: nowrap; 
+}
+
+.logo-symbol {
+    font-family: 'Moul';
+    font-size: 3.125em; /* 50px */
+    color: var(--white);
+    text-shadow: 0px 3.5px 2px rgba(0, 0, 0, 0.3);
+}
+
+.logo-name {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; 
+    font-size: 1.875em; /* 30px */
+    color: var(--main-bg);
+    text-shadow: 0px 3.5px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* 3. MENU */
+#main-menu {
+    display: flex;
+    gap: 2.5em; 
+    margin-right: 2em;
+}
+
+#main-menu a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; 
+    font-size: 1.25em; /* 20px */
+    color: var(--main-bg);
+    text-shadow: 0px 3px 2px rgba(0, 0, 0, 0.3);
+}
+
+#main-menu li{
+    margin: 1em 0;
+}
+
+#main-menu a:hover {
+    color: var(--white);
+}
+
+/* Hamburger Menu Toggle */
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    width:1.5em;
+    height:1.5em;
+    display: inline-block;
+    border-top:3px solid #000; 
+    padding-top:4px; 
+    margin-right:5px; 
+    vertical-align:top; 
+    margin-top:1.5px;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: "";
+    width: 1.5em;
+    display: block;
+    border-bottom: 3px solid var(--main-bg);
+}
+
+.menu-icon::before {
+    margin-bottom: 0.3125em; 
+}
+
+/* 4. HERO SECTION  */
+#hero {
+    background-color: var(--hero-bg); 
+    padding: 5em 2.5em 0;   
+    position: relative; 
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-bio-image-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 85.375em; 
+    margin: 0 auto;
+}
+
+.hero-content {
+    max-width: 37.5em; 
+}
+
+/* MAIN TEXT */
+#hero h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; 
+    font-size: clamp(3em, 6vw, 5em); /* RESPONSIVE */
+    margin-bottom: 1.25em; 
+    text-align: center; 
+}
+
+.bio {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; 
+    font-size: clamp(0.5em, 3vw, 1.25em); /* RESPONSIVE */
+    line-height: 1.6;
+    white-space: nowrap;
+}
+/* IMAGE */
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    margin-bottom: -1em;
+}
+
+.hero-image img {
+    max-width: 21.875em; 
+    position: relative;
+    z-index: 2; 
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    width: 20em; 
+    height: 25em; 
+    background-color: var(--yellow-30);
+    border-radius: 50%;
+    filter: blur(1.875em); 
+    z-index: 1; 
+}
+
+.hero-image:hover::before {
+    background-color: var(--yellow-46);
+}
+
+/* 5. CONTENT AREA */
+.main-content-area {
+    background-color: var(--main-bg);
+    position: relative;
+    z-index: 5; 
+}
+
+.main-content-area::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6.25em; 
+    background-color: var(--main-bg);
+    z-index: 15; 
+}
+/* CONNECT ME SECTION */
+.connect-me {
+    display: flex;
+    gap: 1.25em; 
+    align-items: center;
+    justify-content: center; 
+    padding-top: 2em; 
+    text-align: center;
+    position: relative; 
+    z-index: 20;
+}
+
+.connect-me p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; 
+    font-size: 1.25em; 
+    margin-bottom: 0.5em; 
+}
+
+/* LINKS */
+.social-links {
+    display: flex;
+    gap: 1.25em; 
+    align-items: center;
+    justify-content: center; 
+}
+/* GITHUB ICON */
+.social-icon-github {
+    width: 2.82em; 
+    height: 2.76em; 
+}
+/* LINKEDIN ICON */
+.social-icon-linkedin {
+    width: 2.82em; 
+    height: 2.61em; 
+}
+
+/* YELLOW DIVIDER LINE */
+.divider-line {
+    height: 1px; 
+    width: 60%;
+    background-color: var(--yellow);
+    margin: 1.25em auto 0.125em auto; 
+    position: relative;
+    z-index: 30;
+}
+
+/* PROJECTS SECTION */
+#projects {
+    text-align: center;
+}
+
+#projects h2, #contact h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600; 
+    font-size: clamp(1.875em, 5vw, 3.125em); 
+    margin-bottom: 1.75em;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+    gap: 1.875em; 
+    justify-content: center;
+    margin: 2.2em;
+    padding-top: 10px;
+}
+
+.project-card {
+    position: relative;
+    height: 4.425em; 
+    background-color: var(--yellow-45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5em;
+}
+
+.project-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600; 
+    font-size: clamp(0.5em, 6vw, 1.5em);
+    color: var(--white);
+    text-shadow: 0px 3.5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover {
+    background-color: var(--yellow); 
+}
+
+/* CONTACT SECTION */
+#contact {
+    text-align: center;
+    max-width: 37.5em;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+#contact h2 {
+    margin-bottom: 1.25em;
+}
+
+#contact p {
+    font-weight: 400; 
+    font-size: 1.25em; 
+    margin-bottom: 1.875em; 
+}
+
+/* FORM */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25em; 
+}
+
+.form-group {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    gap: 3em; 
+}
+
+.form-group label {
+    display: block;
+    font-weight: 400; 
+    font-size: 1.25em;     
+    text-align: right;
+    white-space: nowrap;
+    width: 6em;
+}
+
+.form-group input,
+.form-group textarea {
+    font-family: 'Roboto', sans-serif;
+    flex-grow: 1; 
+    background-color: var(--yellow-30);
+    border: 1px solid var(--yellow);
+    border-radius: 8px; 
+    padding: 10px 20px; 
+    color: var(--white);
+    height: 2.31em;
+    font-size: 1.25em;
+}
+
+.form-group textarea {
+    min-height: 7.5em; 
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+/* SUBMIT BUTTON */
+button  {
+    font-family: 'Roboto', sans-serif;
+}
+.submit-btn {
+    width: 11.375em; 
+    height: 2.56em; 
+    background-color: var(--yellow-70);
+    border: none;
+    border-radius: 8PX; 
+    color: var(--white);
+    font-weight: 600; 
+    font-size: 1.25em;
+}
+
+.submit-btn:hover {
+    background-color: var(--yellow);
+    font-weight: 600; 
+}
+
+/* 
+   6. FOOTER */
+footer {
+    background-color: var(--black);
+    padding: 0.5em; 
+    text-align: center;
+}
+
+#copyright {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; 
+    font-size: 1em; 
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* 7. MEDIA QUERIES
+   a. TABLET (max-width: 768px)*/
+@media (max-width: 768px) {
+
+    #main-menu {
+        margin-right: 0.5em;
+        gap: 1.25em; 
+    }
+    
+    .project-title { 
+        font-size: 22px; 
+    }
+
+    .hero-image img {
+    max-width: 19em;
+    }
+
+    #hero .bio {
+    font-size: clamp(0.25em, 2.5vw, 1em); 
+    }
+
+    .hero-image::before {
+        width: 17em; 
+        height: 20em; 
+        filter: blur(1.5625em);
+    }
+
+    .connect-me p, 
+    #contact p,
+    .form-group label,
+    .form-group input,
+    .form-group textarea { 
+        font-size: 1.125em; 
+    }
+
+    .social-icon-github { 
+        width: 2.6em; 
+        height: 2.54em; 
+    } 
+
+    .social-icon-linkedin { 
+        width: 2.6em; 
+        height: 2.41em; 
+    } 
+
+    .form-group textarea { 
+        min-height: 6.25em; 
+    } 
+
+    .submit-btn {
+        width: 8.379em; 
+        height: 2.375em; 
+        font-size: 1.125em; 
+    }
+
+    #copyright { 
+        font-size: 16px; 
+    } 
+}
+
+/* 7. MEDIA QUERIES
+   b. (max-width: 650px)*/
+
+@media (max-width: 650px) {
+
+    /* Hamburger Menu */
+    .menu-toggle { 
+        display: block;
+    }
+
+    #main-menu {
+      display:none;
+    }
+
+    #main-menu.show-small {
+      display:block;
+      position:absolute;
+      background-color:#dedede;
+      width:100%;
+      padding:1em;
+      left:0; 
+      z-index:10; 
+    }
+
+    .hero-bio-image-wrapper {
+        flex-direction: column; 
+    }
+    
+    .hero-content {
+        text-align: center; 
+        order: 1;
+    }
+
+    .hero-image {
+        order: 2; 
+    }
+
+    #hero .bio { 
+        font-size: 0.9375em; 
+    }
+    
+    .project-card{ 
+        margin: 0 2em;
+        height: 3.5em
+    }
+
+    .project-title { 
+        font-size: 20px; 
+    }
+
+    #contact { 
+        padding-left: 0.625em; 
+        padding-right: 0.625em; 
+    } 
+
+    #contact form {
+        align-items: flex-start; 
+        width: 14.8em; 
+        margin: 0 auto; 
+    }
+
+    .form-group { 
+        max-width: 14.8em;
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 0.3125em;
+    }
+
+    .form-group label { 
+        font-size: 0.937em;  
+        width: auto; 
+        text-align: left;
+    }
+
+    .form-group input { 
+        width: 100%; 
+        height: 2.125em; 
+    } 
+
+    .form-group textarea { 
+        width: 100%; 
+        min-height: 5em; 
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.937em; 
+    }
+
+    .submit-btn {
+        width: 7em; 
+        height: 2.25em; 
+        font-size: 1.125em; 
+    }
+}
+
+/* 7. MEDIA QUERIES
+   c. phone (max-width: 420px)*/
+
+@media (max-width: 420px) {
+
+    header {
+        height: 5.75em; 
+        padding: 0 1.25em;
+    }
+
+    .logo-symbol { 
+        font-size: 2.5em; 
+    } 
+
+    .logo-name { 
+        font-size: 1.5625em; 
+    } 
+
+    .connect-me {
+        padding-top: 3em; 
+        flex-direction: column;
+        row-gap: 0.5em;
+    }
+
+    .connect-me p { 
+        font-size: 0.937em; 
+    } 
+
+    .social-icon-github { 
+        width: 2.47em; height: 2.42em; 
+    } 
+
+    .social-icon-linkedin { 
+        width: 2.47em; height: 2.29em; 
+    } 
+
+    .project-card{ 
+        margin: 0;
+        height: 2.7em
+    }
+
+    .project-title { 
+        font-size: 18px; 
+    }
+
+    .submit-btn { 
+        font-size: 0.937em; 
+    }
+
+    #copyright { 
+        font-size: 14px; 
+    } 
+}
